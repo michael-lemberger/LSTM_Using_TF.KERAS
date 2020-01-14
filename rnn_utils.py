@@ -43,19 +43,19 @@ if __name__ == '__main__':
     x_train, y_train, x_test, y_test = prep_data(train_siz=1584, test_siz=1584)
 
     model = Sequential()
-    model.add(LSTM(128, input_shape=(x_train.shape[1:]), activation='relu', return_sequences=True))
+    model.add(LSTM(128, input_shape=(x_train.shape[1:]), activation='tanh', return_sequences=True))
     model.add(Dropout(0.2))
     model.summary()
 
-    model.add(LSTM(128, activation='relu'))
+    model.add(LSTM(128, activation='tanh'))
     model.add(Dropout(0.2))
 
-    model.add(Dense(32, activation='relu'))
+    model.add(Dense(32, activation='tanh'))
     model.add(Dropout(0.2))
 
-    model.add(Dense(2, activation='sigmoid'))
+    model.add(Dense(2, activation='softmax'))
 
-    opt = tf.keras.optimizers.Adam(lr=1e-3 , decay=1e-5)
+    opt = tf.keras.optimizers.Adam(lr=0.001 )
     model.compile(loss='kullback_leibler_divergence', optimizer=opt, metrics=['Accuracy'])
 
     model.fit(x_train, y_train, epochs=1000, validation_data=(x_test, y_test))
