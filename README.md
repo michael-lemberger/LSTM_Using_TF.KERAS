@@ -1,4 +1,6 @@
-<h1>Abstract</h1>
+<h1>Deep Learning- classification of gender by voice recognation</h1>
+
+<h2>Abstract</h2>
 
 The need to find a solution to the voice recognition problem, made it a popular topic
 among the deep learning community. many companies started using voice
@@ -10,7 +12,7 @@ Advertisers. This article will suggest one solution to the problem using a deep
 learning approach; Long Short Term Memory (LSTM) and Recursive Neural Network
 (RNN).
 
-<h1>Introduction</h1>
+<h2>Introduction</h2>
 
 Long Short-Term Memory (LSTM) is widely used in speech recognition. In order to
 achieve higher prediction accuracy, machine learning scientists have built
